@@ -44,10 +44,20 @@
       font-size: 1.2rem;
       opacity: 0.85;
     }
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1; /* pushes footer down */
+    }
     footer {
-      margin-top: auto;
-      padding: 2rem 1rem;
+      margin-top: 3rem;   /* pushes it down from whatever comes before */
+      padding: 2rem 1rem; /* keeps the inner spacing */
       background: rgba(0,0,0,0.4);
+      text-align: center;
     }
     footer nav a {
       margin: 0 1rem;
