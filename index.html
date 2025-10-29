@@ -58,17 +58,17 @@
     main {
       flex: 1; /* pushes footer down */
     }
-    #copilot-widget {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin: 2rem auto;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background: rgba(245, 245, 245, 0.9);
-      max-width: 420px;
-    }
+    #copilot-widget input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.6); /* subtle border */
+  border-radius: 4px;
+  background: transparent;                 /* <-- key line */
+  color: #fff;                             /* text color */
+}
+#copilot-widget input::placeholder {
+  color: rgba(255,255,255,0.7);            /* softer placeholder */
+}
     #copilot-widget img { flex-shrink: 0; }
     #copilot-widget input {
       flex: 1;
@@ -76,16 +76,17 @@
       border: 1px solid #aaa;
       border-radius: 4px;
     }
-    #copilot-widget button {
-      padding: 0.5rem 0.8rem;
-      border: none;
-      background: #0078d4;
-      color: #fff;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    #copilot-widget button:hover { background: #005a9e; 
-    }
+#copilot-widget button {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: transparent;   /* transparent background */
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#copilot-widget button:hover {
+  background: rgba(255,255,255,0.2); /* subtle hover glow */
+}
     footer {
       margin-top: 3rem;   /* pushes it down from whatever comes before */
       padding: 2rem 1rem; /* keeps the inner spacing */
