@@ -10,6 +10,10 @@
     <loc>https://dev.vgateway.net/</loc>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://dev.nimms.com/</loc>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://dev.umaywant2.win/</loc>
     <priority>0.8</priority>
