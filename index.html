@@ -113,61 +113,7 @@
 <!-- Place this where you want the glyphs to appear -->
 <div id="glyph-field"></div>
 
-<script>
-(async () => {
-  const GLOSSARY_URL = "glossary.json";
-  const container = document.getElementById("glyph-field");
-
-  if (!container) {
-    console.error("Missing #glyph-field container in HTML.");
-    return;
-  }
-
-  container.style.position = "relative";
-  container.style.width = "100%";
-  container.style.height = "80vh";
-  container.style.overflow = "hidden";
-
-  try {
-    const res = await fetch(GLOSSARY_URL);
-    if (!res.ok) throw new Error("Glossary fetch failed");
-    const glossary = await res.json();
-
-    glossary.forEach((entry, i) => {
-      const glyph = document.createElement("div");
-      glyph.textContent = entry.glyph;
-      glyph.title = entry.term;
-      glyph.style.position = "absolute";
-      glyph.style.fontSize = "2rem";
-      glyph.style.cursor = "pointer";
-      glyph.style.transition = "transform 10s ease-out, opacity 2s ease-in";
-      glyph.style.opacity = "0.8";
-
-      const angle = Math.random() * 2 * Math.PI;
-      const distance = 300 + Math.random() * 300;
-      const x = Math.cos(angle) * distance;
-      const y = Math.sin(angle) * distance;
-
-      glyph.style.left = "50%";
-      glyph.style.top = "50%";
-      glyph.style.transform = `translate(-50%, -50%)`;
-
-      setTimeout(() => {
-        glyph.style.transform = `translate(${x}px, ${y}px) scale(1.2)`;
-        glyph.style.opacity = "1";
-      }, 100);
-
-      glyph.addEventListener("click", () => {
-        alert(`${entry.term}\n\n${entry.description}`);
-      });
-
-      container.appendChild(glyph);
-    });
-  } catch (err) {
-    console.error("Glyph field failed to load:", err);
-  }
-})();
-</script>
+<script src="https://www.triadicframeworks.org/assets/glossary.js"></script>
   
 <!-- Copilot Search Widget -->
 <div id="copilot-widget">
